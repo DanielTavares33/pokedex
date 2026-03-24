@@ -120,7 +120,7 @@ pokedex/
 │   └── index.tsx           # Home/Main screen
 ├── assets/                 # Static assets (images, fonts)
 ├── components/             # Reusable UI components
-├── constants/              # App constants (theme, colors)
+├── constants/              # App constants (colors)
 ├── hooks/                  # Custom React hooks
 ├── types/                  # TypeScript type definitions
 ├── global.css              # Global styles
@@ -134,18 +134,19 @@ pokedex/
 
 ### Theme Colors
 
-Edit `constants/theme.ts` to customize the app's color scheme:
+Edit `tailwind.config.js` to customize the app's color scheme:
 
-```typescript
-export const Colors = {
-  light: { /* light mode colors */ },
-  dark: { /* dark mode colors */ },
+```javascript
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#DC0A2D",  // Change to your brand color
+      },
+    },
+  },
 };
 ```
-
-### Tailwind Configuration
-
-The project uses NativeWind (Tailwind for React Native). Modify `tailwind.config.js` to add custom utilities or themes.
 
 ## 📝 Available Scripts
 

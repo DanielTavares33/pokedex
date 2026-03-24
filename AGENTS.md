@@ -89,7 +89,6 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 import { usePokemon } from '@/hooks/usePokemon';
 import { Pokemon } from '@/types/pokemon';
-import { COLORS } from '@/constants/theme';
 
 import type { PokemonCardProps } from './PokemonCard.types';
 ```
@@ -126,8 +125,7 @@ components/            # Reusable UI components
   PokemonCard.tsx      # Component file
   PokemonCard.types.ts # Props/types (optional separate file)
 
-constants/              # App constants
-  theme.ts             # Colors, fonts
+constants/              # App constants (colors)
 
 hooks/                  # Custom React hooks
   usePokemon.ts        # Hook implementation
@@ -203,13 +201,12 @@ export function PokemonCard({ id, name }: Props) {
 
 ## 🎨 Theme Colors
 
-```typescript
-// Available Tailwind colors
-primary: "#DC0A2D"  // Pokédex red
+Custom colors are defined in `tailwind.config.js`:
 
-// Light/Dark mode colors (in constants/theme.ts)
-Colors.light.text, Colors.light.background
-Colors.dark.text, Colors.dark.background
+```javascript
+colors: {
+  primary: "#DC0A2D",  // Pokédex red - customize this
+}
 ```
 
 ## 📚 Key Dependencies
